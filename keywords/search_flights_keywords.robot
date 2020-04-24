@@ -11,24 +11,27 @@ Close pages
 
 Select departure
     [Arguments]                     ${city}
-    Select Departure city           ${city}
+    Select departure city           ${city}
+    Sleep                           1
 
-select destination
+Select destination
     [Arguments]                     ${city}
-    Select Destination city         ${city}
+    Select destination city         ${city}
+    Sleep                           1
 
-select departure and destination
+Select departure and destination
     [Arguments]                     ${fromcity}  ${tocity}
-    select departure city           ${fromcity}
-    select destination city         ${tocity}
-    search for flights
+    Select departure city           ${fromcity}
+    Select destination city         ${tocity}
+    Search for flights
     @{flights}=                      Get Found Flights
-    set test variable               ${flights}
+    Set Test Variable               ${flights}
 
 Search Flights
-    search for flights
+    Search for flights
     @{flights}=                      Get Found Flights
-    set test variable               ${flights}
+    Set Test Variable               ${flights}
+    Sleep                           1
 
 Flights are found
-    Should Not Be Empt              ${flights}
+    Should Not Be Empty             ${flights}

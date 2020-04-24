@@ -7,10 +7,7 @@ Suite Teardown                      Close pages
 
 *** Test Cases ***
 The user can search for flights
-    Select Departure                Paris
-    Sleep                           1
-    Select Destination              London
-    Sleep                           1
-    Search Flights
-    Sleep                           1
+    Select departure                Paris
+    Select destination              London
+    Search flights
     Flights are found
