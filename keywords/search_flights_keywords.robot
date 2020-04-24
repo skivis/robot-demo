@@ -1,5 +1,5 @@
 *** Settings ***
-Library								../pages/SearchFlightPage.py  Chrome
+Library                             ../pages/SearchFlightPage.py  Chrome
 
 
 *** Keywords ***
@@ -10,25 +10,25 @@ Close pages
 	Close
 
 Select departure
-	[Arguments]						${city}
-	Select Departure city			${city}
+	[Arguments]                     ${city}
+	Select Departure city           ${city}
 
 select destination
-	[Arguments]						${city}
-	Select Destination city			${city}
+	[Arguments]                     ${city}
+	Select Destination city         ${city}
 
 select departure and destination
-	[Arguments]						${fromcity}  ${tocity}
-	select departure city			${fromcity}
-	select destination city			${tocity}
+	[Arguments]                     ${fromcity}  ${tocity}
+	select departure city           ${fromcity}
+	select destination city         ${tocity}
 	search for flights
-	@{flights}=						Get Found Flights
-	set test variable				${flights}
+	@{flights}=                      Get Found Flights
+	set test variable               ${flights}
 
 Search Flights
 	search for flights
-	@{flights}=						Get Found Flights
-	set test variable				${flights}
+	@{flights}=                      Get Found Flights
+	set test variable               ${flights}
 
 Flights are found
-	Should Not Be Empty				${flights}
+	Should Not Be Empt              ${flights}
